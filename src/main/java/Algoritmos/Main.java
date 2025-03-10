@@ -5,6 +5,7 @@
 package Algoritmos;
 
 import static Algoritmos.Ordenamientos.ordenamientoBurbuja;
+import static Algoritmos.Ordenamientos.ordenamientoSeleccion;
 
 /**
  * Clase principal para ejecutar cada método.
@@ -13,10 +14,20 @@ import static Algoritmos.Ordenamientos.ordenamientoBurbuja;
 public class Main {
     
     public static void main(String[] args) {
+        
+        // Ordenamiento Burbuja
         int[] arr = {10, 6, 2, 11, 5, 14}; // O(n)
         ordenamientoBurbuja(arr); // O(n^2)
         System.out.println("Arreglo ordenado:");
         for (int num : arr) { // O(n)
+            System.out.print(num + " ");
+        }
+        
+        // Ordenamiento Selección
+        int[] arr2 = {44, 66, 18, 20, 42}; // O(n)
+        ordenamientoSeleccion(arr2); // O(n^2)
+        System.out.println("Arreglo ordenado (Selección):");
+        for (int num : arr2) { // O(n)
             System.out.print(num + " ");
         }
     }
