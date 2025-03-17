@@ -5,6 +5,7 @@
 package Algoritmos;
 
 import static Algoritmos.Ordenamientos.ordenamientoBurbuja;
+import static Algoritmos.Ordenamientos.ordenamientoInsercion;
 import static Algoritmos.Ordenamientos.ordenamientoSeleccion;
 
 /**
@@ -29,6 +30,14 @@ public class Main {
         System.out.println("Arreglo ordenado (Selección):");
         for (int num : arr2) { // O(n)
             System.out.print(num + " ");
+        }
+        
+        //Ordenamiento Inserción
+        int[] arr3 = {34, 10, 4, 45, 5, 25}; // O(n)
+        ordenamientoInsercion(arr3); // O(n^2)
+        System.out.println("Arreglo ordenado (Inserción):");
+        for (int num : arr3) { // O(n)
+            System.out.println(num + " ");
         }
     }
 }

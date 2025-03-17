@@ -66,4 +66,37 @@ public class Ordenamientos {
      * el bucle interno se ejecuta n veces para cada iteración del bucle externo.
      * Entonces, como ya se mencionó, el tiempo de ejecución crece exponencialmente con el aumento del tamaño del arreglo (que es n).
      */ 
+    
+    /**
+     * Método que ordena un arreglo de números enteros utilizando el algoritmo de
+     * Ordenamiento de Inserción.
+     * 
+     * @param arr3 El arreglo de números que se va a ordenar. 
+     */
+    
+    public static void ordenamientoInsercion(int[] arr3) { // O(n^2)
+        int n = arr3.length; // 1
+        
+        for(int i = 1; i < n; i++){ // 1 + n + 1 + n
+            int key = arr3[i]; // n-1
+            int j = i - 1; // n-1
+            
+            while (j >= 0 && arr3[j] > key){ // n(n-1)
+                arr3[j+1] = arr3[j]; // n(n-1)
+                j = j - 1; // n(n-1)
+            }
+            arr3[j+1] = key; // n-1
+        }
+    }
+    
+    /**
+     * Expresión algebraica: n^2 + 3n - 3
+     */
+    
+    /** 
+     * Complejidad temporal: Cuadrática O(n^2)
+     * Es cuadrático ya que como se puede observar en los ciclos for y while,
+     * el bucle interno (while) se ejecuta hasta i veces para cada iteración del bucle externo (for).
+     * Por lo que, como ya se mencionó, el tiempo de ejecución crece exponencialmente con el aumento del tamaño del arreglo (que es n).
+     */ 
 }
