@@ -39,5 +39,16 @@ public class Main {
         for (int num : arr3) { // O(n)
             System.out.println(num + " ");
         }
+        
+        //Ordenamiento Rápido
+        int[] arr4 = {18, 3, 20, 31, 4, 15}; // O(n)
+        Ordenamientos ordenamiento = new Ordenamientos();
+        
+        ordenamiento.ordenamientoRapido(arr4, 0, arr4.length - 1); // O(n log n)
+        
+        System.out.println("Arreglo ordenado (Rápido):");
+        for (int num : arr4) { // O(n)
+            System.out.println(num + " ");     
+        }
     }
 }
