@@ -50,5 +50,15 @@ public class Main {
         for (int num : arr4) { // O(n)
             System.out.println(num + " ");     
         }
+        
+        // Ordenamiento Mezcla
+        int[] arr5 = {20, 10, 40, 90, 80, 30}; // O(n)
+
+        ordenamiento.ordenamientoMezcla(arr5, 0, arr5.length - 1); // O(n log n)
+
+        System.out.println("Arreglo ordenado (Mezcla):");
+        for (int num : arr5) { // O(n)
+            System.out.println(num + " ");
+        }
     }
 }

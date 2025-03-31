@@ -150,4 +150,72 @@ public class Ordenamientos {
      * Peor caso: O(n^2), cuando el pivote siempre es el elemento más grande o más pequeño,
      * lo que provoca que solo un lado del array tenga elementos y el otro quede vacío.
      */ 
+    
+    /**
+     * Método que ordena un arreglo de números enteros utilizando el algoritmo de
+     * Ordenamiento Mezcla.
+     * 
+     * @param arr5 El arreglo de números que se va a ordenar. 
+     * @param l Representa el índice del primer elemento del subarreglo que se está considerando ordenar.
+     * @param r Representa el índice del último elemento del subarreglo que se está considerando ordenar.
+     */
+    
+    public void ordenamientoMezcla(int arr5[], int l, int r) {
+        if (l < r) {
+            int m = l + (r - l) / 2; // O(1)
+
+            ordenamientoMezcla(arr5, l, m);
+            ordenamientoMezcla(arr5, m + 1, r);
+            mezcla(arr5, l, m, r);
+        }
+    }
+    
+    private void mezcla(int arr[], int l, int m, int r) {
+        int n1 = m - l + 1; // O(1)
+        int n2 = r - m;     // O(1)
+
+        int L[] = new int[n1]; // O(n1)
+        int R[] = new int[n2]; // O(n2)
+
+        for (int i = 0; i < n1; i++)  // O(n1)
+            L[i] = arr[l + i];  // O(1) por cada iteración
+
+        for (int j = 0; j < n2; j++)  // O(n2)
+            R[j] = arr[m + 1 + j];  // O(1) por cada iteración
+
+        int i = 0, j = 0, k = l;
+        while (i < n1 && j < n2) {  // O(n1 + n2)
+            if (L[i] <= R[j]) {
+                arr[k] = L[i];  // O(1)
+                i++;
+            } else {
+                arr[k] = R[j];  // O(1)
+                j++;
+            }
+            k++;  // O(1)
+        }
+
+        while (i < n1) {  // O(n1)
+            arr[k] = L[i];  // O(1)
+            i++;
+            k++;
+        }
+
+        while (j < n2) {  // O(n2)
+            arr[k] = R[j];  // O(1)
+            j++;
+            k++;
+        }
+    }
+    
+    /**
+     * Expresión algebraica: 2T(n/2) + O(n)
+     */
+    
+    /** 
+     * Complejidad temporal: En el mejor y peor caso, logarítmica: O(n log n).
+     * El algoritmo siempre tiene una complejidad de O(n log n), 
+     * ya que el arreglo se divide recursivamente en dos subarreglos en cada paso 
+     * y la fusión de los subarreglos toma O(n) tiempo en cada nivel de recursión.
+     */
 }
